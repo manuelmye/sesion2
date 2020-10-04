@@ -32,18 +32,46 @@ import entities.Person;
 //}
 public class PersonData {
     List<Person> list = new ArrayList<Person>();
+    int id=0;
 
-    public void create(Person person) {
-
+    public void create(Person p) {
+        p.setId(++id);
+        lis.add(p);
     }
-    public List <Person> list(String cadena) {
+    public List <Person> list(String filter) {
         return list;
     }
     public Person get(int id) {
-        return null;
+        int index;=0;
+        for (Person d : lis){
+            return lis.get(index);
+        }
+        index++;
     }
-    public void remove(int id) {
-
+    return null;
+}
+public void update(Person p) {
+    int index = 0;
+    // boolean b=false;
+    for (Person d : lis) {
+        if (d.getId() == p.getId()) {
+            // d = p;
+            lis.set(index, p);
+            // b=true;
+        }
+        index++;
     }
+    // if (b)
+    // System.out.println("encontrado");
+    // else
+    // System.out.println("NO encontrado");
 
+}
+public void delete(int id) {
+    for (Person d : lis) {
+        if (id == d.getId()) {
+            lis.remove(d);
+            // System.out.println("Eliminado " + d.getName());
+        }
+    }
 }
